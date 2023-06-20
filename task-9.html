@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assigment - 03</title>
+
+    <!-- basic style for page -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <div class="container">
+            <div class="header">
+                <div class="d-flex">
+                    <h1>Assigment no - 03 - task no 9</h1>
+                    <a href="./all-script-js/task-9.js">View JS code</a>
+                </div>
+            </div>
+            <div class="task-box">
+                <h3>9.JS DOM Working with Form Input: </h3> 
+                <form id="mainForm" class="my-form" onsubmit="validateForm(event)">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+                        <span id="nameErr" class="error"></span>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                        <span id="emailErr" class="error"></span>
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+                        <span id="passwordErr" class="error"></span>
+                    </div>
+                    <div>
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
+                        <span id="confirmPasswordErr" class="error"></span>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+     <script src="./all-script-js/task-9.js"></script>
+    
+</body>
+
+</html>

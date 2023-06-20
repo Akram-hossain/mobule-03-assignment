@@ -80,6 +80,51 @@ const width = 800;
 const height = 600;
 
 // on click function
-document.querySelector('.openWindow').addEventListener('click',()=>{
+document.querySelector('.openWindow').addEventListener('click', () => {
     openWindow(url, width, height);
 });
+
+// 5.Navigator Object: ==============================================
+
+// a) function 
+const myBrowserInfo = () => {
+    const userAgent = navigator.userAgent;
+    let browserName;
+    let browserVersion;
+
+    if (userAgent.indexOf("Opera") !== -1 || userAgent.indexOf("OPR") !== -1) {
+        browserName = "Opera";
+    } else if (userAgent.indexOf("Edg") !== -1) {
+        browserName = "Microsoft Edge";
+    } else if (userAgent.indexOf("Chrome") !== -1) {
+        browserName = "Google Chrome";
+    } else if (userAgent.indexOf("Safari") !== -1) {
+        browserName = "Safari";
+    } else if (userAgent.indexOf("Firefox") !== -1) {
+        browserName = "Mozilla Firefox";
+    } else if (userAgent.indexOf("MSIE") !== -1 || userAgent.indexOf("Trident/") !== -1) {
+        browserName = "Internet Explorer";
+    } else {
+        browserName = "Unknown";
+    }
+
+    const versionRegex = /(?:MSIE|Edge|Firefox|Chrome|Opera|Safari)[\/: ]([\d.]+)/;
+    const versionMatch = userAgent.match(versionRegex);
+
+    if (versionMatch && versionMatch.length > 1) {
+        browserVersion = versionMatch[1];
+    } else {
+        browserVersion = "Unknown";
+    }
+
+    return {
+        name: browserName,
+        version: browserVersion
+    };
+}
+
+// b) call function
+const browserInfo = myBrowserInfo();
+console.log("Browser Name: " + browserInfo.name);
+console.log("Browser Version: " + browserInfo.version);
+document.querySelector('.browserInfos').innerHTML = browserInfo.name + " - version: " + browserInfo.version; // html output
